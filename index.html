@@ -1,0 +1,190 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="icon" type="image/png" href="toolbox.png">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=0.9">
+<title>Core Quadrants Exercise</title>
+
+<!-- Safiro font -->
+<style>
+@font-face {
+    font-family: 'Safiro';
+    src: url('Safiro-Regular.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Safiro';
+    src: url('Safiro-Bold.otf') format('opentype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+body {
+    font-family: 'Safiro', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #EDF3F9; /* Zig achtergrondkleur */
+    margin: 0;
+    padding-bottom: 50px;
+    padding-top: 30px;
+    color: #0000D0; /* Zig blauw */
+}
+
+.container {
+    position: relative;
+    width: 900px;
+    height: 600px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 40px;
+    margin-bottom: 20px;
+    padding-top: 40px;
+}
+
+.quadrant {
+    padding: 20px;
+    border: 2px solid #1F59FF; /* Zig blauw */
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-weight: bold;
+    background-color: #FFFFFF; /* Witte achtergrond voor contrast */
+    color: #1F59FF;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+textarea {
+    width: 90%;
+    height: 70%;
+    resize: none;
+    border: 1px solid #CED4DA;
+    background-color: #F9FAFB;
+    color: #364F6B;
+    padding: 10px;
+    border-radius: 8px;
+    outline: none;
+    font-family: 'Safiro', sans-serif;
+    font-size: 16px;
+}
+
+.arrow-text {
+    position: absolute;
+    font-weight: bold;
+    color: #1F59FF;
+    display: flex;
+    align-items: center;
+}
+
+.arrow-text::after {
+    content: ' →';
+    margin-left: 5px;
+    font-size: 20px;
+}
+
+.bottom-text::after {
+    content: ' ←';
+    margin-left: 0;
+    margin-right: 5px;
+}
+
+.top-text {
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.bottom-text {
+    bottom: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.left-text {
+    top: 50%;
+    left: -120px;
+    transform: translateY(-50%) rotate(-90deg);
+}
+
+.right-text {
+    top: 50%;
+    right: -120px;
+    transform: translateY(-50%) rotate(90deg);
+}
+
+button {
+    margin-top: 20px;
+    padding: 12px 24px;
+    background-color: #00D0FF; /* Zig turquoise */
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #1F59FF;
+}
+
+.logo {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 180px;
+}
+
+.copyright {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    font-size: 14px;
+    color: #1F59FF;
+}
+
+@media print {
+    body {
+        zoom: 0.85;
+    }
+    .arrow-text {
+        color: black;
+    }
+}
+</style>
+</head>
+<body>
+    <img src="logo.png" alt="Zig Logo" class="logo">
+
+    <div class="container">
+        <div class="quadrant"><textarea placeholder="Core Quality"></textarea></div>
+        <div class="quadrant"><textarea placeholder="Pitfall"></textarea></div>
+        <div class="quadrant"><textarea placeholder="Allergy"></textarea></div>
+        <div class="quadrant"><textarea placeholder="Challenge"></textarea></div>
+
+        <!-- Teksten met pijlen -->
+        <div class="arrow-text top-text">Too much of a good thing</div>
+        <div class="arrow-text right-text">Positive opposite</div>
+        <div class="arrow-text bottom-text">Too much of a good thing</div>
+        <div class="arrow-text left-text">Positive opposite</div>
+    </div>
+
+    <div class="copyright">&copy; Tim Vos</div>
+
+    <button onclick="window.print()">Print as PDF</button>
+
+    <!-- Toolbox knop -->
+    <a href="https://dutchfurtive.github.io/Toolbox/" target="_blank">
+        <button style="position: absolute; bottom: 20px; right: 20px; background-color: #00D0FF; color: white; font-size: 14px; padding: 8px 16px; border: none; border-radius: 5px; cursor: pointer;">
+            Go to Toolbox
+        </button>
+    </a>
+</body>
+</html>
